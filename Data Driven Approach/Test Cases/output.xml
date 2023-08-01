@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.3 on win32)" generated="20230725 23:01:01.215" rpa="false" schemaversion="3">
+<suite id="s1" name="Login Using Test data" source="C:\Users\sai\PycharmProjects\RobotAutomation\Data Driven Approach\Test Cases\Login Using Test data.robot">
+<test id="s1-t1" name="Login" line="10">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230725 23:01:02.231" level="INFO">Opening browser 'Chrome' to base url 'https://thetestingworld.com/testings/'.</msg>
+<status status="PASS" starttime="20230725 23:01:02.231" endtime="20230725 23:01:06.423"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230725 23:01:06.426" endtime="20230725 23:01:06.639"/>
+</kw>
+<kw name="Fetch Locators from Json file" library="Read Locators">
+<var>${Username locator}</var>
+<arg>Registration.username_textbox_name</arg>
+<kw name="Fetch Locators" library="Fetch Locators from Json">
+<var>${locator}</var>
+<arg>${Jsonpath}</arg>
+<msg timestamp="20230725 23:01:06.640" level="INFO">${locator} = fld_username</msg>
+<status status="PASS" starttime="20230725 23:01:06.640" endtime="20230725 23:01:06.640"/>
+</kw>
+<msg timestamp="20230725 23:01:06.640" level="INFO">${Username locator} = fld_username</msg>
+<status status="PASS" starttime="20230725 23:01:06.640" endtime="20230725 23:01:06.640"/>
+</kw>
+<kw name="Fetch Locators from Json file" library="Read Locators">
+<var>${Email locator}</var>
+<arg>Registration.email_textbox_name</arg>
+<kw name="Fetch Locators" library="Fetch Locators from Json">
+<var>${locator}</var>
+<arg>${Jsonpath}</arg>
+<msg timestamp="20230725 23:01:06.646" level="INFO">${locator} = fld_email</msg>
+<status status="PASS" starttime="20230725 23:01:06.646" endtime="20230725 23:01:06.646"/>
+</kw>
+<msg timestamp="20230725 23:01:06.646" level="INFO">${Email locator} = fld_email</msg>
+<status status="PASS" starttime="20230725 23:01:06.646" endtime="20230725 23:01:06.646"/>
+</kw>
+<kw name="Fetch Locators from Json file" library="Read Locators">
+<var>${Password locator}</var>
+<arg>Registration.password_textbox_name</arg>
+<kw name="Fetch Locators" library="Fetch Locators from Json">
+<var>${locator}</var>
+<arg>${Jsonpath}</arg>
+<msg timestamp="20230725 23:01:06.646" level="INFO">${locator} = fld_password</msg>
+<status status="PASS" starttime="20230725 23:01:06.646" endtime="20230725 23:01:06.646"/>
+</kw>
+<msg timestamp="20230725 23:01:06.646" level="INFO">${Password locator} = fld_password</msg>
+<status status="PASS" starttime="20230725 23:01:06.646" endtime="20230725 23:01:06.646"/>
+</kw>
+<kw name="Fetch Locators from Json file" library="Read Locators">
+<var>${Confirm Password locator}</var>
+<arg>Registration.confirm_password_textbox_name</arg>
+<kw name="Fetch Locators" library="Fetch Locators from Json">
+<var>${locator}</var>
+<arg>${Jsonpath}</arg>
+<msg timestamp="20230725 23:01:06.654" level="INFO">${locator} = fld_cpassword</msg>
+<status status="PASS" starttime="20230725 23:01:06.654" endtime="20230725 23:01:06.654"/>
+</kw>
+<msg timestamp="20230725 23:01:06.654" level="INFO">${Confirm Password locator} = fld_cpassword</msg>
+<status status="PASS" starttime="20230725 23:01:06.646" endtime="20230725 23:01:06.654"/>
+</kw>
+<kw name="Fetch Rows number" library="Read Locators">
+<var>${rows}</var>
+<arg>Sheet1</arg>
+<kw name="Fetch Number Of Rows" library="Read Test data from Excel file">
+<var>${row num}</var>
+<arg>${SheetName}</arg>
+<msg timestamp="20230725 23:01:06.657" level="INFO">${row num} = 5</msg>
+<status status="PASS" starttime="20230725 23:01:06.657" endtime="20230725 23:01:06.657"/>
+</kw>
+<msg timestamp="20230725 23:01:06.657" level="INFO">${rows} = 5</msg>
+<status status="PASS" starttime="20230725 23:01:06.657" endtime="20230725 23:01:06.657"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>1</value>
+<value>${rows}+1</value>
+<iter>
+<var name="${i}">1</var>
+<kw name="Read Excel data" library="Read Locators">
+<var>${username}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>1</arg>
+<kw name="Fetch Cell Data" library="Read Test data from Excel file">
+<var>${cell data}</var>
+<arg>${SheetName}</arg>
+<arg>${row}</arg>
+<arg>${column}</arg>
+<msg timestamp="20230725 23:01:06.662" level="INFO">${cell data} = Chirag Nagrecha</msg>
+<status status="PASS" starttime="20230725 23:01:06.657" endtime="20230725 23:01:06.662"/>
+</kw>
+<msg timestamp="20230725 23:01:06.662" level="INFO">${username} = Chirag Nagrecha</msg>
+<status status="PASS" starttime="20230725 23:01:06.657" endtime="20230725 23:01:06.662"/>
+</kw>
+<kw name="Read Excel data" library="Read Locators">
+<var>${email}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>2</arg>
+<kw name="Fetch Cell Data" library="Read Test data from Excel file">
+<var>${cell data}</var>
+<arg>${SheetName}</arg>
+<arg>${row}</arg>
+<arg>${column}</arg>
+<msg timestamp="20230725 23:01:06.662" level="INFO">${cell data} = nagrechachirag@gmail.com</msg>
+<status status="PASS" starttime="20230725 23:01:06.662" endtime="20230725 23:01:06.662"/>
+</kw>
+<msg timestamp="20230725 23:01:06.662" level="INFO">${email} = nagrechachirag@gmail.com</msg>
+<status status="PASS" starttime="20230725 23:01:06.662" endtime="20230725 23:01:06.662"/>
+</kw>
+<kw name="Read Excel data" library="Read Locators">
+<var>${password}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>3</arg>
+<kw name="Fetch Cell Data" library="Read Test data from Excel file">
+<var>${cell data}</var>
+<arg>${SheetName}</arg>
+<arg>${row}</arg>
+<arg>${column}</arg>
+<msg timestamp="20230725 23:01:06.662" level="INFO">${cell data} = chirag@3213</msg>
+<status status="PASS" starttime="20230725 23:01:06.662" endtime="20230725 23:01:06.662"/>
+</kw>
+<msg timestamp="20230725 23:01:06.662" level="INFO">${password} = chirag@3213</msg>
+<status status="PASS" starttime="20230725 23:01:06.662" endtime="20230725 23:01:06.662"/>
+</kw>
+<kw name="Read Excel data" library="Read Locators">
+<var>${confirm password}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>4</arg>
+<kw name="Fetch Cell Data" library="Read Test data from Excel file">
+<var>${cell data}</var>
+<arg>${SheetName}</arg>
+<arg>${row}</arg>
+<arg>${column}</arg>
+<msg timestamp="20230725 23:01:06.670" level="INFO">${cell data} = chirag@3213</msg>
+<status status="PASS" starttime="20230725 23:01:06.670" endtime="20230725 23:01:06.670"/>
+</kw>
+<msg timestamp="20230725 23:01:06.673" level="INFO">${confirm password} = chirag@3213</msg>
+<status status="PASS" starttime="20230725 23:01:06.662" endtime="20230725 23:01:06.673"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:${Username locator}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230725 23:01:06.675" level="INFO">Typing text 'Chirag Nagrecha' into text field 'name:fld_username'.</msg>
+<status status="PASS" starttime="20230725 23:01:06.674" endtime="20230725 23:01:07.149"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:${Email locator}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230725 23:01:07.149" level="INFO">Typing text 'nagrechachirag@gmail.com' into text field 'name:fld_email'.</msg>
+<status status="PASS" starttime="20230725 23:01:07.149" endtime="20230725 23:01:07.555"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:${Password locator}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230725 23:01:07.555" level="INFO">Typing text 'chirag@3213' into text field 'name:fld_password'.</msg>
+<status status="PASS" starttime="20230725 23:01:07.555" endtime="20230725 23:01:07.837"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:${Confirm Password locator}</arg>
+<arg>${confirm password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230725 23:01:07.839" level="INFO">Typing text 'chirag@3213' into text field 'name:fld_cpassword'.</msg>
+<status status="PASS" starttime="20230725 23:01:07.837" endtime="20230725 23:01:08.112"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230725 23:01:11.113" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230725 23:01:08.112" endtime="20230725 23:01:11.113"/>
+</kw>
+<status status="PASS" starttime="20230725 23:01:06.657" endtime="20230725 23:01:11.113"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Read Excel data" library="Read Locators">
+<var>${username}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>1</arg>
+<kw name="Fetch Cell Data" library="Read Test data from Excel file">
+<var>${cell data}</var>
+<arg>${SheetName}</arg>
+<arg>${row}</arg>
+<arg>${column}</arg>
+<msg timestamp="20230725 23:01:11.114" level="INFO">${cell data} = Deveshree Bhisikar</msg>
+<status status="PASS" starttime="20230725 23:01:11.114" endtime="20230725 23:01:11.114"/>
+</kw>
+<msg timestamp="20230725 23:01:11.114" level="INFO">${username} = Deveshree Bhisikar</msg>
+<status status="PASS" starttime="20230725 23:01:11.114" endtime="20230725 23:01:11.114"/>
+</kw>
+<kw name="Read Excel data" library="Read Locators">
+<var>${email}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>2</arg>
+<kw name="Fetch Cell Data" library="Read Test data from Excel file">
+<var>${cell data}</var>
+<arg>${SheetName}</arg>
+<arg>${row}</arg>
+<arg>${column}</arg>
+<msg timestamp="20230725 23:01:11.114" level="INFO">${cell data} = deveshree@gmail.com</msg>
+<status status="PASS" starttime="20230725 23:01:11.114" endtime="20230725 23:01:11.114"/>
+</kw>
+<msg timestamp="20230725 23:01:11.114" level="INFO">${email} = deveshree@gmail.com</msg>
+<status status="PASS" starttime="20230725 23:01:11.114" endtime="20230725 23:01:11.114"/>
+</kw>
+<kw name="Read Excel data" library="Read Locators">
+<var>${password}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>3</arg>
+<kw name="Fetch Cell Data" library="Read Test data from Excel file">
+<var>${cell data}</var>
+<arg>${SheetName}</arg>
+<arg>${row}</arg>
+<arg>${column}</arg>
+<msg timestamp="20230725 23:01:11.114" level="INFO">${cell data} = dev@3213</msg>
+<status status="PASS" starttime="20230725 23:01:11.114" endtime="20230725 23:01:11.114"/>
+</kw>
+<msg timestamp="20230725 23:01:11.114" level="INFO">${password} = dev@3213</msg>
+<status status="PASS" starttime="20230725 23:01:11.114" endtime="20230725 23:01:11.114"/>
+</kw>
+<kw name="Read Excel data" library="Read Locators">
+<var>${confirm password}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>4</arg>
+<kw name="Fetch Cell Data" library="Read Test data from Excel file">
+<var>${cell data}</var>
+<arg>${SheetName}</arg>
+<arg>${row}</arg>
+<arg>${column}</arg>
+<msg timestamp="20230725 23:01:11.114" level="INFO">${cell data} = dev@3213</msg>
+<status status="PASS" starttime="20230725 23:01:11.114" endtime="20230725 23:01:11.114"/>
+</kw>
+<msg timestamp="20230725 23:01:11.114" level="INFO">${confirm password} = dev@3213</msg>
+<status status="PASS" starttime="20230725 23:01:11.114" endtime="20230725 23:01:11.114"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:${Username locator}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230725 23:01:11.114" level="INFO">Typing text 'Deveshree Bhisikar' into text field 'name:fld_username'.</msg>
+<status status="PASS" starttime="20230725 23:01:11.114" endtime="20230725 23:01:11.347"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:${Email locator}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230725 23:01:11.348" level="INFO">Typing text 'deveshree@gmail.com' into text field 'name:fld_email'.</msg>
+<status status="PASS" starttime="20230725 23:01:11.347" endtime="20230725 23:01:11.547"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:${Password locator}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230725 23:01:11.550" level="INFO">Typing text 'dev@3213' into text field 'name:fld_password'.</msg>
+<status status="PASS" starttime="20230725 23:01:11.547" endtime="20230725 23:01:11.756"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:${Confirm Password locator}</arg>
+<arg>${confirm password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230725 23:01:11.756" level="INFO">Typing text 'dev@3213' into text field 'name:fld_cpassword'.</msg>
+<status status="PASS" starttime="20230725 23:01:11.756" endtime="20230725 23:01:11.981"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230725 23:01:14.981" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230725 23:01:11.981" endtime="20230725 23:01:14.981"/>
+</kw>
+<status status="PASS" starttime="20230725 23:01:11.113" endtime="20230725 23:01:14.981"/>
+</iter>
+<iter>
+<var name="${i}">3</var>
+<kw name="Read Excel data" library="Read Locators">
+<var>${username}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>1</arg>
+<kw name="Fetch Cell Data" library="Read Test data from Excel file">
+<var>${cell data}</var>
+<arg>${SheetName}</arg>
+<arg>${row}</arg>
+<arg>${column}</arg>
+<msg timestamp="20230725 23:01:14.981" level="INFO">${cell data} = Priya Nimje</msg>
+<status status="PASS" starttime="20230725 23:01:14.981" endtime="20230725 23:01:14.981"/>
+</kw>
+<msg timestamp="20230725 23:01:14.981" level="INFO">${username} = Priya Nimje</msg>
+<status status="PASS" starttime="20230725 23:01:14.981" endtime="20230725 23:01:14.981"/>
+</kw>
+<kw name="Read Excel data" library="Read Locators">
+<var>${email}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>2</arg>
+<kw name="Fetch Cell Data" library="Read Test data from Excel file">
+<var>${cell data}</var>
+<arg>${SheetName}</arg>
+<arg>${row}</arg>
+<arg>${column}</arg>
+<msg timestamp="20230725 23:01:14.983" level="INFO">${cell data} = priyan@gmail.com</msg>
+<status status="PASS" starttime="20230725 23:01:14.983" endtime="20230725 23:01:14.983"/>
+</kw>
+<msg timestamp="20230725 23:01:14.983" level="INFO">${email} = priyan@gmail.com</msg>
+<status status="PASS" starttime="20230725 23:01:14.981" endtime="20230725 23:01:14.983"/>
+</kw>
+<kw name="Read Excel data" library="Read Locators">
+<var>${password}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>3</arg>
+<kw name="Fetch Cell Data" library="Read Test data from Excel file">
+<var>${cell data}</var>
+<arg>${SheetName}</arg>
+<arg>${row}</arg>
+<arg>${column}</arg>
+<msg timestamp="20230725 23:01:14.983" level="INFO">${cell data} = pri@3213</msg>
+<status status="PASS" starttime="20230725 23:01:14.983" endtime="20230725 23:01:14.983"/>
+</kw>
+<msg timestamp="20230725 23:01:14.983" level="INFO">${password} = pri@3213</msg>
+<status status="PASS" starttime="20230725 23:01:14.983" endtime="20230725 23:01:14.983"/>
+</kw>
+<kw name="Read Excel data" library="Read Locators">
+<var>${confirm password}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>4</arg>
+<kw name="Fetch Cell Data" library="Read Test data from Excel file">
+<var>${cell data}</var>
+<arg>${SheetName}</arg>
+<arg>${row}</arg>
+<arg>${column}</arg>
+<msg timestamp="20230725 23:01:14.983" level="INFO">${cell data} = pri@3213</msg>
+<status status="PASS" starttime="20230725 23:01:14.983" endtime="20230725 23:01:14.983"/>
+</kw>
+<msg timestamp="20230725 23:01:14.983" level="INFO">${confirm password} = pri@3213</msg>
+<status status="PASS" starttime="20230725 23:01:14.983" endtime="20230725 23:01:14.983"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:${Username locator}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230725 23:01:14.983" level="INFO">Typing text 'Priya Nimje' into text field 'name:fld_username'.</msg>
+<status status="PASS" starttime="20230725 23:01:14.983" endtime="20230725 23:01:15.136"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:${Email locator}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230725 23:01:15.136" level="INFO">Typing text 'priyan@gmail.com' into text field 'name:fld_email'.</msg>
+<status status="PASS" starttime="20230725 23:01:15.136" endtime="20230725 23:01:15.286"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:${Password locator}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230725 23:01:15.286" level="INFO">Typing text 'pri@3213' into text field 'name:fld_password'.</msg>
+<status status="PASS" starttime="20230725 23:01:15.286" endtime="20230725 23:01:15.439"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:${Confirm Password locator}</arg>
+<arg>${confirm password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230725 23:01:15.439" level="INFO">Typing text 'pri@3213' into text field 'name:fld_cpassword'.</msg>
+<status status="PASS" starttime="20230725 23:01:15.439" endtime="20230725 23:01:15.646"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230725 23:01:18.647" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230725 23:01:15.646" endtime="20230725 23:01:18.647"/>
+</kw>
+<status status="PASS" starttime="20230725 23:01:14.981" endtime="20230725 23:01:18.647"/>
+</iter>
+<iter>
+<var name="${i}">4</var>
+<kw name="Read Excel data" library="Read Locators">
+<var>${username}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>1</arg>
+<kw name="Fetch Cell Data" library="Read Test data from Excel file">
+<var>${cell data}</var>
+<arg>${SheetName}</arg>
+<arg>${row}</arg>
+<arg>${column}</arg>
+<msg timestamp="20230725 23:01:18.650" level="INFO">${cell data} = Nishad Durge</msg>
+<status status="PASS" starttime="20230725 23:01:18.647" endtime="20230725 23:01:18.650"/>
+</kw>
+<msg timestamp="20230725 23:01:18.650" level="INFO">${username} = Nishad Durge</msg>
+<status status="PASS" starttime="20230725 23:01:18.647" endtime="20230725 23:01:18.650"/>
+</kw>
+<kw name="Read Excel data" library="Read Locators">
+<var>${email}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>2</arg>
+<kw name="Fetch Cell Data" library="Read Test data from Excel file">
+<var>${cell data}</var>
+<arg>${SheetName}</arg>
+<arg>${row}</arg>
+<arg>${column}</arg>
+<msg timestamp="20230725 23:01:18.650" level="INFO">${cell data} = nishad@gmail.com</msg>
+<status status="PASS" starttime="20230725 23:01:18.650" endtime="20230725 23:01:18.650"/>
+</kw>
+<msg timestamp="20230725 23:01:18.650" level="INFO">${email} = nishad@gmail.com</msg>
+<status status="PASS" starttime="20230725 23:01:18.650" endtime="20230725 23:01:18.650"/>
+</kw>
+<kw name="Read Excel data" library="Read Locators">
+<var>${password}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>3</arg>
+<kw name="Fetch Cell Data" library="Read Test data from Excel file">
+<var>${cell data}</var>
+<arg>${SheetName}</arg>
+<arg>${row}</arg>
+<arg>${column}</arg>
+<msg timestamp="20230725 23:01:18.650" level="INFO">${cell data} = nish@3213</msg>
+<status status="PASS" starttime="20230725 23:01:18.650" endtime="20230725 23:01:18.650"/>
+</kw>
+<msg timestamp="20230725 23:01:18.650" level="INFO">${password} = nish@3213</msg>
+<status status="PASS" starttime="20230725 23:01:18.650" endtime="20230725 23:01:18.650"/>
+</kw>
+<kw name="Read Excel data" library="Read Locators">
+<var>${confirm password}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>4</arg>
+<kw name="Fetch Cell Data" library="Read Test data from Excel file">
+<var>${cell data}</var>
+<arg>${SheetName}</arg>
+<arg>${row}</arg>
+<arg>${column}</arg>
+<msg timestamp="20230725 23:01:18.650" level="INFO">${cell data} = nish@3213</msg>
+<status status="PASS" starttime="20230725 23:01:18.650" endtime="20230725 23:01:18.650"/>
+</kw>
+<msg timestamp="20230725 23:01:18.650" level="INFO">${confirm password} = nish@3213</msg>
+<status status="PASS" starttime="20230725 23:01:18.650" endtime="20230725 23:01:18.650"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:${Username locator}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230725 23:01:18.650" level="INFO">Typing text 'Nishad Durge' into text field 'name:fld_username'.</msg>
+<status status="PASS" starttime="20230725 23:01:18.650" endtime="20230725 23:01:19.039"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:${Email locator}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230725 23:01:19.039" level="INFO">Typing text 'nishad@gmail.com' into text field 'name:fld_email'.</msg>
+<status status="PASS" starttime="20230725 23:01:19.039" endtime="20230725 23:01:19.402"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:${Password locator}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230725 23:01:19.403" level="INFO">Typing text 'nish@3213' into text field 'name:fld_password'.</msg>
+<status status="PASS" starttime="20230725 23:01:19.402" endtime="20230725 23:01:19.771"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:${Confirm Password locator}</arg>
+<arg>${confirm password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230725 23:01:19.773" level="INFO">Typing text 'nish@3213' into text field 'name:fld_cpassword'.</msg>
+<status status="PASS" starttime="20230725 23:01:19.771" endtime="20230725 23:01:20.131"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230725 23:01:23.131" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230725 23:01:20.131" endtime="20230725 23:01:23.131"/>
+</kw>
+<status status="PASS" starttime="20230725 23:01:18.647" endtime="20230725 23:01:23.131"/>
+</iter>
+<iter>
+<var name="${i}">5</var>
+<kw name="Read Excel data" library="Read Locators">
+<var>${username}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>1</arg>
+<kw name="Fetch Cell Data" library="Read Test data from Excel file">
+<var>${cell data}</var>
+<arg>${SheetName}</arg>
+<arg>${row}</arg>
+<arg>${column}</arg>
+<msg timestamp="20230725 23:01:23.134" level="INFO">${cell data} = Ansh Nagardhakar</msg>
+<status status="PASS" starttime="20230725 23:01:23.131" endtime="20230725 23:01:23.134"/>
+</kw>
+<msg timestamp="20230725 23:01:23.134" level="INFO">${username} = Ansh Nagardhakar</msg>
+<status status="PASS" starttime="20230725 23:01:23.131" endtime="20230725 23:01:23.134"/>
+</kw>
+<kw name="Read Excel data" library="Read Locators">
+<var>${email}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>2</arg>
+<kw name="Fetch Cell Data" library="Read Test data from Excel file">
+<var>${cell data}</var>
+<arg>${SheetName}</arg>
+<arg>${row}</arg>
+<arg>${column}</arg>
+<msg timestamp="20230725 23:01:23.134" level="INFO">${cell data} = ansh@gmail.com</msg>
+<status status="PASS" starttime="20230725 23:01:23.134" endtime="20230725 23:01:23.134"/>
+</kw>
+<msg timestamp="20230725 23:01:23.134" level="INFO">${email} = ansh@gmail.com</msg>
+<status status="PASS" starttime="20230725 23:01:23.134" endtime="20230725 23:01:23.134"/>
+</kw>
+<kw name="Read Excel data" library="Read Locators">
+<var>${password}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>3</arg>
+<kw name="Fetch Cell Data" library="Read Test data from Excel file">
+<var>${cell data}</var>
+<arg>${SheetName}</arg>
+<arg>${row}</arg>
+<arg>${column}</arg>
+<msg timestamp="20230725 23:01:23.134" level="INFO">${cell data} = ansh@3213</msg>
+<status status="PASS" starttime="20230725 23:01:23.134" endtime="20230725 23:01:23.134"/>
+</kw>
+<msg timestamp="20230725 23:01:23.134" level="INFO">${password} = ansh@3213</msg>
+<status status="PASS" starttime="20230725 23:01:23.134" endtime="20230725 23:01:23.134"/>
+</kw>
+<kw name="Read Excel data" library="Read Locators">
+<var>${confirm password}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>4</arg>
+<kw name="Fetch Cell Data" library="Read Test data from Excel file">
+<var>${cell data}</var>
+<arg>${SheetName}</arg>
+<arg>${row}</arg>
+<arg>${column}</arg>
+<msg timestamp="20230725 23:01:23.142" level="INFO">${cell data} = ansh@3213</msg>
+<status status="PASS" starttime="20230725 23:01:23.134" endtime="20230725 23:01:23.142"/>
+</kw>
+<msg timestamp="20230725 23:01:23.142" level="INFO">${confirm password} = ansh@3213</msg>
+<status status="PASS" starttime="20230725 23:01:23.134" endtime="20230725 23:01:23.142"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:${Username locator}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230725 23:01:23.144" level="INFO">Typing text 'Ansh Nagardhakar' into text field 'name:fld_username'.</msg>
+<status status="PASS" starttime="20230725 23:01:23.142" endtime="20230725 23:01:23.434"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:${Email locator}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230725 23:01:23.441" level="INFO">Typing text 'ansh@gmail.com' into text field 'name:fld_email'.</msg>
+<status status="PASS" starttime="20230725 23:01:23.434" endtime="20230725 23:01:23.721"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:${Password locator}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230725 23:01:23.721" level="INFO">Typing text 'ansh@3213' into text field 'name:fld_password'.</msg>
+<status status="PASS" starttime="20230725 23:01:23.721" endtime="20230725 23:01:24.088"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:${Confirm Password locator}</arg>
+<arg>${confirm password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230725 23:01:24.091" level="INFO">Typing text 'ansh@3213' into text field 'name:fld_cpassword'.</msg>
+<status status="PASS" starttime="20230725 23:01:24.091" endtime="20230725 23:01:24.479"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230725 23:01:27.484" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230725 23:01:24.479" endtime="20230725 23:01:27.484"/>
+</kw>
+<status status="PASS" starttime="20230725 23:01:23.131" endtime="20230725 23:01:27.484"/>
+</iter>
+<status status="PASS" starttime="20230725 23:01:06.657" endtime="20230725 23:01:27.484"/>
+</for>
+<status status="PASS" starttime="20230725 23:01:02.231" endtime="20230725 23:01:27.484"/>
+</test>
+<status status="PASS" starttime="20230725 23:01:01.215" endtime="20230725 23:01:27.484"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Login Using Test data">Login Using Test data</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

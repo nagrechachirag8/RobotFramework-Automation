@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.3 on win32)" generated="20230724 17:17:10.371" rpa="false" schemaversion="3">
+<suite id="s1" name="Read Elements from json file with python function" source="C:\Users\sai\PycharmProjects\RobotAutomation\Test Cases\Read Elements from json file with python function.robot">
+<test id="s1-t1" name="Registration" line="10">
+<kw name="Read Elements Locator">
+<var>${Username}</var>
+<arg>Registration.username_textbox_name</arg>
+<kw name="Read Elements From Json" library="Read Elements from Json">
+<var>${result}</var>
+<arg>${Jsonpath}</arg>
+<msg timestamp="20230724 17:17:10.634" level="INFO">${result} = fld_username</msg>
+<status status="PASS" starttime="20230724 17:17:10.622" endtime="20230724 17:17:10.634"/>
+</kw>
+<msg timestamp="20230724 17:17:10.634" level="INFO">${Username} = fld_username</msg>
+<status status="PASS" starttime="20230724 17:17:10.622" endtime="20230724 17:17:10.634"/>
+</kw>
+<kw name="Read Elements Locator">
+<var>${Email}</var>
+<arg>Registration.email_textbox_name</arg>
+<kw name="Read Elements From Json" library="Read Elements from Json">
+<var>${result}</var>
+<arg>${Jsonpath}</arg>
+<msg timestamp="20230724 17:17:10.634" level="INFO">${result} = fld_email</msg>
+<status status="PASS" starttime="20230724 17:17:10.634" endtime="20230724 17:17:10.634"/>
+</kw>
+<msg timestamp="20230724 17:17:10.638" level="INFO">${Email} = fld_email</msg>
+<status status="PASS" starttime="20230724 17:17:10.634" endtime="20230724 17:17:10.638"/>
+</kw>
+<kw name="Read Elements Locator">
+<var>${Password}</var>
+<arg>Registration.password_textbox_name</arg>
+<kw name="Read Elements From Json" library="Read Elements from Json">
+<var>${result}</var>
+<arg>${Jsonpath}</arg>
+<msg timestamp="20230724 17:17:10.638" level="INFO">${result} = fld_password</msg>
+<status status="PASS" starttime="20230724 17:17:10.638" endtime="20230724 17:17:10.638"/>
+</kw>
+<msg timestamp="20230724 17:17:10.638" level="INFO">${Password} = fld_password</msg>
+<status status="PASS" starttime="20230724 17:17:10.638" endtime="20230724 17:17:10.638"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230724 17:17:10.638" level="INFO">Opening browser 'Chrome' to base url 'https://www.thetestingworld.com/testings/'.</msg>
+<status status="PASS" starttime="20230724 17:17:10.638" endtime="20230724 17:17:13.803"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230724 17:17:13.803" endtime="20230724 17:17:13.930"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:${Username}</arg>
+<arg>Chirag Nagrecha</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230724 17:17:13.930" level="INFO">Typing text 'Chirag Nagrecha' into text field 'name:fld_username'.</msg>
+<status status="PASS" starttime="20230724 17:17:13.930" endtime="20230724 17:17:14.138"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:${Email}</arg>
+<arg>chirag.nagrecha@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230724 17:17:14.138" level="INFO">Typing text 'chirag.nagrecha@gmail.com' into text field 'name:fld_email'.</msg>
+<status status="PASS" starttime="20230724 17:17:14.138" endtime="20230724 17:17:14.245"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:${Password}</arg>
+<arg>123456789</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230724 17:17:14.245" level="INFO">Typing text '123456789' into text field 'name:fld_password'.</msg>
+<status status="PASS" starttime="20230724 17:17:14.245" endtime="20230724 17:17:14.362"/>
+</kw>
+<status status="PASS" starttime="20230724 17:17:10.622" endtime="20230724 17:17:14.362"/>
+</test>
+<status status="PASS" starttime="20230724 17:17:10.371" endtime="20230724 17:17:14.363"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Read Elements from json file with python function">Read Elements from json file with python function</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
