@@ -1,79 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.3 on win32)" generated="20230724 17:17:10.371" rpa="false" schemaversion="3">
-<suite id="s1" name="Read Elements from json file with python function" source="C:\Users\sai\PycharmProjects\RobotAutomation\Test Cases\Read Elements from json file with python function.robot">
-<test id="s1-t1" name="Registration" line="10">
-<kw name="Read Elements Locator">
-<var>${Username}</var>
-<arg>Registration.username_textbox_name</arg>
-<kw name="Read Elements From Json" library="Read Elements from Json">
-<var>${result}</var>
-<arg>${Jsonpath}</arg>
-<msg timestamp="20230724 17:17:10.634" level="INFO">${result} = fld_username</msg>
-<status status="PASS" starttime="20230724 17:17:10.622" endtime="20230724 17:17:10.634"/>
-</kw>
-<msg timestamp="20230724 17:17:10.634" level="INFO">${Username} = fld_username</msg>
-<status status="PASS" starttime="20230724 17:17:10.622" endtime="20230724 17:17:10.634"/>
-</kw>
-<kw name="Read Elements Locator">
-<var>${Email}</var>
-<arg>Registration.email_textbox_name</arg>
-<kw name="Read Elements From Json" library="Read Elements from Json">
-<var>${result}</var>
-<arg>${Jsonpath}</arg>
-<msg timestamp="20230724 17:17:10.634" level="INFO">${result} = fld_email</msg>
-<status status="PASS" starttime="20230724 17:17:10.634" endtime="20230724 17:17:10.634"/>
-</kw>
-<msg timestamp="20230724 17:17:10.638" level="INFO">${Email} = fld_email</msg>
-<status status="PASS" starttime="20230724 17:17:10.634" endtime="20230724 17:17:10.638"/>
-</kw>
-<kw name="Read Elements Locator">
-<var>${Password}</var>
-<arg>Registration.password_textbox_name</arg>
-<kw name="Read Elements From Json" library="Read Elements from Json">
-<var>${result}</var>
-<arg>${Jsonpath}</arg>
-<msg timestamp="20230724 17:17:10.638" level="INFO">${result} = fld_password</msg>
-<status status="PASS" starttime="20230724 17:17:10.638" endtime="20230724 17:17:10.638"/>
-</kw>
-<msg timestamp="20230724 17:17:10.638" level="INFO">${Password} = fld_password</msg>
-<status status="PASS" starttime="20230724 17:17:10.638" endtime="20230724 17:17:10.638"/>
-</kw>
+<robot generator="Robot 6.0.2 (Python 3.11.3 on win32)" generated="20230804 00:55:30.452" rpa="false" schemaversion="3">
+<suite id="s1" name="TC 003 Working With Buttons Checkbox Links Radiobutton" source="C:\Users\sai\PycharmProjects\RobotAutomation\Test Cases\TC_003_Working_With_Buttons_Checkbox_Links_Radiobutton.robot">
+<test id="s1-t1" name="Robot Working with Buttons Checkbox Links Radiobuttons" line="9">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${URL}</arg>
 <arg>${Browser}</arg>
 <arg>options=add_experimental_option("detach", True)</arg>
+<arg>executable_path=C:\Users\sai\PycharmProjects\RobotAutomation\Driver\chromedriver.exe</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230724 17:17:10.638" level="INFO">Opening browser 'Chrome' to base url 'https://www.thetestingworld.com/testings/'.</msg>
-<status status="PASS" starttime="20230724 17:17:10.638" endtime="20230724 17:17:13.803"/>
+<msg timestamp="20230804 00:55:31.109" level="INFO">Opening browser 'Chrome' to base url 'https://www.thetestingworld.com/testings/'.</msg>
+<msg timestamp="20230804 00:55:31.125" level="INFO">Applicable driver not found; attempting to install with Selenium Manager (Beta)</msg>
+<msg timestamp="20230804 00:55:32.501" level="WARN">Incompatible release of chromedriver (version 115.0.5790.170) detected in PATH: C:\Users\sai\AppData\Local\Programs\Python\Python311\Scripts\chromedriver.exe</msg>
+<status status="PASS" starttime="20230804 00:55:31.109" endtime="20230804 00:55:36.329"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230724 17:17:13.803" endtime="20230724 17:17:13.930"/>
+<status status="PASS" starttime="20230804 00:55:36.329" endtime="20230804 00:55:36.469"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>name:${Username}</arg>
-<arg>Chirag Nagrecha</arg>
+<arg>name:fld_username</arg>
+<arg>Chirag</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230724 17:17:13.930" level="INFO">Typing text 'Chirag Nagrecha' into text field 'name:fld_username'.</msg>
-<status status="PASS" starttime="20230724 17:17:13.930" endtime="20230724 17:17:14.138"/>
+<msg timestamp="20230804 00:55:36.472" level="INFO">Typing text 'Chirag' into text field 'name:fld_username'.</msg>
+<status status="PASS" starttime="20230804 00:55:36.470" endtime="20230804 00:55:36.911"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>name:${Email}</arg>
-<arg>chirag.nagrecha@gmail.com</arg>
+<arg>name:fld_password</arg>
+<arg>abcdef</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230724 17:17:14.138" level="INFO">Typing text 'chirag.nagrecha@gmail.com' into text field 'name:fld_email'.</msg>
-<status status="PASS" starttime="20230724 17:17:14.138" endtime="20230724 17:17:14.245"/>
+<msg timestamp="20230804 00:55:36.918" level="INFO">Typing text 'abcdef' into text field 'name:fld_password'.</msg>
+<status status="PASS" starttime="20230804 00:55:36.918" endtime="20230804 00:55:37.471"/>
 </kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>name:${Password}</arg>
-<arg>123456789</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230724 17:17:14.245" level="INFO">Typing text '123456789' into text field 'name:fld_password'.</msg>
-<status status="PASS" starttime="20230724 17:17:14.245" endtime="20230724 17:17:14.362"/>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath://input[@type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230804 00:55:37.473" level="INFO">Clicking button 'xpath://input[@type='submit']'.</msg>
+<status status="PASS" starttime="20230804 00:55:37.473" endtime="20230804 00:55:37.888"/>
 </kw>
-<status status="PASS" starttime="20230724 17:17:10.622" endtime="20230724 17:17:14.362"/>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>name:terms</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20230804 00:55:37.896" level="INFO">Selecting checkbox 'name:terms'.</msg>
+<status status="PASS" starttime="20230804 00:55:37.888" endtime="20230804 00:55:38.216"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>add_type</arg>
+<arg>home</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20230804 00:55:38.218" level="INFO">Selecting 'home' from radio button 'add_type'.</msg>
+<status status="PASS" starttime="20230804 00:55:38.218" endtime="20230804 00:55:38.341"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>xpath://a[text()='Read Detail']</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20230804 00:55:38.342" level="INFO">Clicking link 'xpath://a[text()='Read Detail']'.</msg>
+<status status="PASS" starttime="20230804 00:55:38.342" endtime="20230804 00:55:38.542"/>
+</kw>
+<status status="PASS" starttime="20230804 00:55:31.109" endtime="20230804 00:55:38.546"/>
 </test>
-<status status="PASS" starttime="20230724 17:17:10.371" endtime="20230724 17:17:14.363"/>
+<status status="PASS" starttime="20230804 00:55:30.468" endtime="20230804 00:55:38.549"/>
 </suite>
 <statistics>
 <total>
@@ -82,9 +67,10 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Read Elements from json file with python function">Read Elements from json file with python function</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="TC 003 Working With Buttons Checkbox Links Radiobutton">TC 003 Working With Buttons Checkbox Links Radiobutton</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20230804 00:55:32.501" level="WARN">Incompatible release of chromedriver (version 115.0.5790.170) detected in PATH: C:\Users\sai\AppData\Local\Programs\Python\Python311\Scripts\chromedriver.exe</msg>
 </errors>
 </robot>

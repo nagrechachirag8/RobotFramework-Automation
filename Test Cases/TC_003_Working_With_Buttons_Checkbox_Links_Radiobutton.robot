@@ -7,7 +7,7 @@ ${URL}    https://www.thetestingworld.com/testings/
 
 *** Test Cases ***
 Robot Working with Buttons Checkbox Links Radiobuttons
-    Open Browser    ${URL}    ${Browser}    options=add_experimental_option("detach", True)
+    Open Browser    ${URL}    ${Browser}    options=add_experimental_option("detach", True)    executable_path=C:\Users\sai\PycharmProjects\RobotAutomation\Driver\chromedriver.exe
     Maximize Browser Window
 
 #------------- Button ----------------------
